@@ -1,0 +1,146 @@
+
+.header{
+    background-color:#232f3e;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    /* padding: 10px; */
+    padding-right: 0.6rem;
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+    width: auto;
+    position: fixed;
+    width: 100%;
+}
+
+.header__logo{
+    width: 8rem;
+    height:5rem;
+    padding: 0.1rem 0.8rem 0 0.6rem;
+    margin: 1rem 0 0 1rem;
+    cursor: pointer;
+    object-fit: contain;
+}
+.header__location{
+    color:white;
+    display: flex;
+    align-items: center;
+    margin-left: 0.4rem;
+}
+.header__location_icon{
+   color: white;
+   font-size: 1.6rem !important;
+   margin-right: -0.7rem;
+}
+.header__option-hello{
+    color: #dfdfdf;
+}
+.header__option-add{
+    font-weight: 700;
+    justify-content: justify;
+    text-align: left;
+    font-size: 1.3rem !important;
+}
+.header__search{
+    display: flex;
+    margin-left: 1.5rem;
+    flex: 1;
+   
+}
+
+.header__searchInput{
+    border-radius: 2px 0 0 2px;
+    height: 1.2rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    /* flex-grow: 0.3; */
+    width: 100%;
+
+}
+.header__searchIcon{
+    background-color: orange;
+    padding: 5px;
+    border-radius: 0px 2px 2px 0px;
+    height: 2.22rem !important;
+}
+.header_nav{
+    /* margin-left: 2rem; */
+    display: flex;
+    flex: 1;
+    color: white;
+    justify-content: space-evenly;
+
+}
+
+ .header__nav-link{
+    /* margin-right: 10px; */
+    text-decoration: none;
+    color: white;
+}
+
+.header__option{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.header_option_line-1{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.header_option_line-2{
+    font-size: 1.5rem ;
+    font-weight: 700;
+}
+
+.header__option_basket{
+    display: flex;
+    align-items: center;
+}
+.header__cart_logo{
+    font-size:2.5rem !important;
+    height: 2.5rem !important;
+    margin-right: 1rem;
+}
+.header__option_basket > span{
+    font-size: 1.5rem ;
+    font-weight:100 ;
+}
+
+@media all and (max-width :600px) {
+    .header__option{
+        margin-right: 0;
+    }
+    .header_option_line-1{
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+    }
+    .header_option_line-2{
+        font-size: 0.9rem;
+    }
+    .header__cart_logo{
+        font-size:2.5rem !important;
+        height: 1.9rem !important;
+        margin-right: 0.2rem;
+        margin-left: 0.4rem;
+    }
+    .header__option_basket > span{
+        font-size: 1.3rem ;
+        margin-right: 0.3rem;
+        font-weight:100 ;
+    }
+    .header__logo{
+        width: 6rem;
+        height: 4rem;
+        padding: 0%;
+        margin-left: 0.3rem;
+    }
+    .header__location{
+        display: none;
+    }
+}
