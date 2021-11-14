@@ -1,2 +1,0 @@
-//  My context store.
-

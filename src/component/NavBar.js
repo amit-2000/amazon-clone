@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import { useStateValue } from "../store/StateProvider";
+export const ADD_TO_CART = "ADD_TO_CART";
 const NavBar = () => {
+  // const [{basket}, dispatch] = useStateValue();
+
   return (
     <nav className="header">
       <Link to="/">
@@ -55,7 +59,7 @@ const NavBar = () => {
         <Link to="/checkout" className="header__nav-link">
           <div className="header__option_basket">
             <ShoppingBasketIcon className="header__cart_logo" />
-            <span>{3}</span>
+            <span>{0}</span>
           </div>
         </Link>
       </div>
