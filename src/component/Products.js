@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts, increment } from "../Reducer";
 import "./Products.css";
 
 const Products = ({ title, id, image, rating, price }) => {
   const { count } = useSelector((state) => state.counter);
+  const { products } = useSelector((state) => state.counter);
+
+
   const dispatch = useDispatch();
 
   return (
