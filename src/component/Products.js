@@ -1,15 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts, increment } from "../Reducer";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { increment } from "../Reducer";
 import "./Products.css";
 
 const Products = ({ title, id, image, rating, price }) => {
-  const { count } = useSelector((state) => state.counter);
-  const { products } = useSelector((state) => state.counter);
-
+  // const { count } = useSelector((state) => state.counter);
 
   const dispatch = useDispatch();
-
   return (
     <div className="product">
       <div className="product__info">
@@ -21,8 +19,8 @@ const Products = ({ title, id, image, rating, price }) => {
         <div className="product__rating">
           {Array(rating)
             .fill()
-            .map((_) => {
-              return <p>⭐</p>;
+            .map((_, idx) => {
+              return <p key={idx}>⭐</p>;
             })}
         </div>
       </div>

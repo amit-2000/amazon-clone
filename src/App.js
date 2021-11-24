@@ -6,14 +6,18 @@ import About from "./component/About";
 import NavBar from "./component/NavBar.js";
 import Header from "./component/Header";
 import { useDispatch } from "react-redux";
-import { getProducts } from "./Reducer";
+import { fetchProducts } from "./Reducer";
 export default function App() {
-  const { products } = useSelector((state) => state.counter);
-  console.log(products);
+  const {products} = useSelector((state) => state.counter);
   const dispatch = useDispatch();
+  const postStatus = useSelector((state) => state.counter.status);
+  const state = useSelector((state) => state.counter);
+  console.log("postStatus ", postStatus);
   useEffect(() => {
-    return dispatch(getProducts());
-  }, [1]);
+    return dispatch(fetchProducts({}));
+  }, [dispatch]);
+  console.log(products);
+  console.log(state);
   return (
     <Router>
       <div className="App">

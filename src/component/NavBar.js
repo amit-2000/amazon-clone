@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
@@ -8,7 +8,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 export const ADD_TO_CART = "ADD_TO_CART";
 const NavBar = () => {
   const { count } = useSelector((state) => state.counter);
-  console.log("typeof count", typeof count);
+  // console.log("typeof count", typeof count);
   return (
     <nav className="header">
       <Link to="/">
