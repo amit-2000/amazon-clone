@@ -1,5 +1,6 @@
-import { ClosedCaptionDisabledOutlined } from "@mui/icons-material";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { enableMapSet } from "immer";
+enableMapSet();
 
 export const fetchProducts = createAsyncThunk(
   "counter/fetchProducts",
@@ -15,9 +16,9 @@ export const fetchProducts = createAsyncThunk(
 );
 
 const initialState = {
-  count: 10,
+  count: 0,
   products: [],
-  productsBasket: new Set(),
+  productsBasket: [],
   status: null,
   filterPosts: [],
 };
@@ -27,7 +28,7 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      state.count += 1;
+      // state.count += 1;
     },
     decrement: (state) => {
       state.count -= 1;
@@ -52,7 +53,16 @@ export const counterSlice = createSlice({
     },
     addToBasket: (state, action) => {
       console.log("action add to basket ", action);
-      state.productsBasket.add(action.payload);
+      // const unique = state.productsBasket.push(action.payload);
+
+      state.productsBasket.push(action.payload);
+      state.count = state.productsBasket.length;
+    },
+    removeFromCart: (state, action) => {
+      const id = action.payload;
+      const prods = state.productsBasket.filter((item) => item.id !== id);
+      state.productsBasket = prods;
+      state.count = state.productsBasket.length;
     },
   },
 });
@@ -66,5 +76,6 @@ export const {
   addToProducts,
   addToFilterPosts,
   addToBasket,
+  removeFromCart,
 } = counterSlice.actions;
 export default counterSlice.reducer;

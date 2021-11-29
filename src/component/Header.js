@@ -12,16 +12,14 @@ const Header = () => {
       />
       <div className="home__row home__row-topMargin">
         <Products
-          id={232}
-          title="This site can’t be reachedCheck if there is a typo in amitperane.io.
-If spelling is correct, try running Windows Network Diagnostics.
-"
+          id={1}
+          title="Duplicate"
           price={78}
           rating={5}
           image="https://m.media-amazon.com/images/I/61FjVQa2R5L._AC_SY400_.jpg"
         />
         <Products
-          id={232}
+          id={2}
           title="This site can’t be reachedCheck if there is a typo in amitperane.io.
 If spelling is correct, try running Windows Network Diagnostics.
 "
@@ -32,7 +30,7 @@ If spelling is correct, try running Windows Network Diagnostics.
       </div>
       <div className="home__row">
         <Products
-          id={232}
+          id={3}
           title="This site can’t be reachedCheck if there is a typo in amitperane.io.
 If spelling is correct, try running Windows Network Diagnostics.
 "
@@ -41,7 +39,7 @@ If spelling is correct, try running Windows Network Diagnostics.
           image="https://m.media-amazon.com/images/I/41laAYFqMFL._AC_SY400_.jpg"
         />
         <Products
-          id={232}
+          id={4}
           title="This site can’t be reachedCheck if there is a typo in amitperane.io.
 If spelling is correct, try running Windows Network Diagnostics.
 "
@@ -50,7 +48,7 @@ If spelling is correct, try running Windows Network Diagnostics.
           image="https://images-eu.ssl-images-amazon.com/images/G/31/img21/OP/BTS/D14264916_IN_Printers_OP_GW_revamp_nov19_dashbord_Card_2X_4._SY608_CB667376048_.jpg"
         />
         <Products
-          id={232}
+          id={5}
           title="This site can’t be reachedCheck if there is a typo in amitperane.io.
 If spelling is correct, try running Windows Network Diagnostics.
 "
@@ -60,7 +58,7 @@ If spelling is correct, try running Windows Network Diagnostics.
         />
 
         <Products
-          id={232}
+          id={6}
           title="This site can’t be reachedCheck if there is a typo in amitperane.io.
 If spelling is correct, try running Windows Network Diagnostics.
 "
@@ -71,7 +69,7 @@ If spelling is correct, try running Windows Network Diagnostics.
       </div>
       <div className="home__row">
         <Products
-          id={232}
+          id={7}
           title="This site can’t be reachedCheck if there is a typo in amitperane.io.
 If spelling is correct, try running Windows Network Diagnostics.
 "

@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { useSelector } from "react-redux";
-import { addToBasket, increment } from "../Reducer";
+import { addToBasket, increment, removeFromCart } from "../Reducer";
 import "./Products.css";
 const Products = ({ title, id, image, rating, price }) => {
+  const [add, setAdd] = useState(false);
   const state = useSelector((state) => state.counter);
   console.log("Products in basket are  ", state);
   const dispatch = useDispatch();
   const addToCart = (title, id, image, rating, price) => {
-    dispatch(addToBasket(title, id, image, rating, price));
+    dispatch(addToBasket({ title, id, image, rating, price }));
   };
 
   return (
@@ -28,19 +29,33 @@ const Products = ({ title, id, image, rating, price }) => {
         </div>
       </div>
       <img className="product__image" src={image} alt="product_image" />
-      <button
-        className="product__btn product__btn-cart"
-        onClick={() => {
-          addToCart(title, id, image, rating, price);
-        }}
-      >
-        Add to cart
-      </button>
+      {add ? (
+        <button
+          className="product__btn product__btn-cart"
+          onClick={() => {
+            // addToCart(title, id, image, rating, price);
+            dispatch(removeFromCart(id));
+            setAdd(false);
+          }}
+        >
+          Remove from Cart
+        </button>
+      ) : (
+        <button
+          className="product__btn product__btn-cart"
+          onClick={() => {
+            addToCart(title, id, image, rating, price);
+            setAdd(true);
+          }}
+        >
+          Add to cart
+        </button>
+      )}
+
       <button
         className="product__btn"
         onClick={() => {
-          // dispatch(increment());
-          addToCart({ title, id, image, rating, price });
+          dispatch(increment());
         }}
       >
         Buy Now
@@ -50,3 +65,4 @@ const Products = ({ title, id, image, rating, price }) => {
 };
 
 export default Products;
+ 

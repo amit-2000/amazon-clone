@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     background-color: rgb(255, 255, 255);
     min-width: 10rem;
+    width: 100%;
     max-height: 50rem;
     margin: 1rem;
     padding: 20px;
@@ -14,6 +15,7 @@
     .product{
         margin-bottom: 3rem;
         margin:  0 auto 3rem auto;
+        width: auto;
     }
 }
 .product__info{

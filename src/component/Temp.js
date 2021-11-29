@@ -1,8 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useDeleteProdMutation } from "../api/apiSlice";
-import { addToFilterPosts } from "../Reducer";
+// import { addToFilterPosts } from "../Reducer";
 const Temp = () => {
   // const { products } = useSelector((state) => state.counter);
   // const dispatch = useDispatch();
@@ -11,9 +11,9 @@ const Temp = () => {
   // const handleBtn = () => {
   //   dispatch(addToFilterPosts(products));
   // };
-  const [deletepPost, res] = useDeleteProdMutation();
+  const [deletepPost, ] = useDeleteProdMutation();
   // console.log("DeletePost function", deletepPost);
-  console.log("response from deltepost", res);
+  // console.log("response from deltepost", res);
 
   return (
     <div>

@@ -26,6 +26,7 @@ max-width: 150rem;
     z-index: 1;
     margin-bottom: 1.5rem;
     padding: 10px;
+    flex-grow: 1;
 }
 .home__row-topMargin{
     margin-top: -20rem;
