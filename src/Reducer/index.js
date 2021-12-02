@@ -21,6 +21,7 @@ const initialState = {
   productsBasket: [],
   status: null,
   filterPosts: [],
+  isLoggedin: false,
 };
 
 export const counterSlice = createSlice({

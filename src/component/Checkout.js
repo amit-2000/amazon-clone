@@ -1,9 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { removeFromCart } from "../Reducer";
 import "./checkout.css";
 // import "./Products.css";
-const Checkout = ({ props }) => {
+const Checkout = () => {
+  const props = useSelector((state) => state.counter);
+
   console.log("checkout state ", props);
   var total = 0;
   const dispatch = useDispatch();
