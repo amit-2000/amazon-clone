@@ -1,33 +1,35 @@
 import React, { useState } from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import "./login.css";
-import { useSelector, useDispatch } from "react-redux";
 // import { auth } from "../config/firebase";
+// import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { auth, signInWithEmailAndPassword } from "../config/firebase";
-import { setisLoggedin } from "../Reducer";
-function Login() {
-  const state = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
-  dispatch(setisLoggedin(false));
+import { auth, createUserWithEmailAndPassword } from "../config/firebase";
+function SignUp() {
+  // const state = useSelector((state) => state.counter);
+  // console.log("State from Login ", state);
+  console.log("db : ", "auth :", auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
     if (password.length > 0 && email) {
-      signInWithEmailAndPassword(auth, email, password)
+      console.log("Email ", email, "password ", password);
+      createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          dispatch(setisLoggedin(true));
+          // ...
         })
         .catch((error) => {
           // const errorCode = error.code
           const errorMessage = error.message;
-          if (error) {
-            alert("Enter valid password and email");
+          console.log(errorMessage);
+          if (errorMessage) {
+            console.log("Email is ", email);
+            alert("Email already exist");
           }
           // ..
         });
@@ -35,7 +37,6 @@ function Login() {
       alert("Enter valid password and email");
     }
   };
-  console.log("is Logged in ?", state.isLoggedin);
 
   const handleShowPassword = () => {
     setShow(!show);
@@ -45,13 +46,14 @@ function Login() {
     setShow(false);
     return;
   };
+
   return (
     <div className="login">
       <Link to="/">
         <img className="login__logo" src="/img" alt="logo" />
       </Link>
       <div className="login__container">
-        <h1 className="login__title">Sign in</h1>
+        <h1 className="login__title">Sign Up</h1>
         <form>
           <h3>Email</h3>
           <input
@@ -74,8 +76,12 @@ function Login() {
             <RemoveRedEyeIcon className="login__showPassword__eye" />
             show password
           </p>
-          <button className="login__button" type="submit" onClick={handleLogin}>
-            Sign in
+          <button
+            className="login__button"
+            type="submit"
+            onClick={handleRegister}
+          >
+            Sign up
           </button>
         </form>
         <p className="login__para">
@@ -83,9 +89,9 @@ function Login() {
           reprehenderit, possimus quam eligendi voluptatum quae! Ut, accusantium
           corporis perspiciatis, nostrum in iure amet error laborum nisi
         </p>
-        <Link to="/signup" className="login__button_link">
-          <button className="login__button ">
-            Not have an accout ? create account
+        <Link to="/login" className="login__button_link">
+          <button className="login__button login__button_link">
+            Already have an acoount ? Sign in
           </button>
         </Link>
       </div>
@@ -93,4 +99,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;

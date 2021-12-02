@@ -65,6 +65,9 @@ export const counterSlice = createSlice({
       state.productsBasket = prods;
       state.count = state.productsBasket.length;
     },
+    setisLoggedin: (state, action) => {
+      state.isLoggedin = action.payload;
+    },
   },
 });
 
@@ -78,5 +81,6 @@ export const {
   addToFilterPosts,
   addToBasket,
   removeFromCart,
+  setisLoggedin,
 } = counterSlice.actions;
 export default counterSlice.reducer;

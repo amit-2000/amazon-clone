@@ -24,7 +24,7 @@ const Checkout = () => {
           {props.productsBasket.length > 0 ? (
             props.productsBasket.map(
               (prod, idx) => (
-                (total = total + prod.price),
+                // (total = total + prod.price),
                 (
                   <div className="product">
                     <div className="product__info">

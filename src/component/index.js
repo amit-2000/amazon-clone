@@ -3,4 +3,5 @@ import NavBar from "./NavBar.js";
 import Header from "./Header";
 import Checkout from "./Checkout";
 import Login from "./Login";
-export { About, NavBar, Login, Header, Checkout };
+import SignUp from "./SignUp";
+export { About, NavBar, Login, Header, Checkout, SignUp };
