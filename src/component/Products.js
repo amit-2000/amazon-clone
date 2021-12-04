@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 // import { useSelector } from "react-redux";
-import { addToBasket, increment, removeFromCart } from "../Reducer";
 import "./Products.css";
+
+import { addToBasket, increment, removeFromCart } from "../Reducer";
+// import { Link, Navigate } from "react-router-dom";
+
 const Products = ({ title, id, image, rating, price }) => {
   const [add, setAdd] = useState(false);
-  const state = useSelector((state) => state.counter);
-  console.log("Products in basket are  ", state);
+  // const state = useSelector((state) => state.counter);
+  // const { isLoggedin } = state;
+  // console.log("is Logged in   ", state.isLoggedin);
   const dispatch = useDispatch();
   const addToCart = (title, id, image, rating, price) => {
     dispatch(addToBasket({ title, id, image, rating, price }));
@@ -51,7 +55,6 @@ const Products = ({ title, id, image, rating, price }) => {
           Add to cart
         </button>
       )}
-
       <button
         className="product__btn"
         onClick={() => {
@@ -65,4 +68,3 @@ const Products = ({ title, id, image, rating, price }) => {
 };
 
 export default Products;
- 

@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {  useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
 import {
   About,
   NavBar,
@@ -9,8 +11,17 @@ import {
   Login,
   SignUp,
 } from "./component/index";
+import { setisLoggedin } from "./Reducer";
 
 export default function App() {
+  // const state = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
+  // localStorage.removeItem("token");
+  console.log("token from app", token);
+  if (token) {
+    dispatch(setisLoggedin(true));
+  }
   return (
     <Router>
       <div className="App">
