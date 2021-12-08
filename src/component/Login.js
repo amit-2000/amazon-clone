@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
@@ -12,17 +12,13 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
-  const [loggedin, setLoggedin] = useState(state.counter);
 
-  useEffect(() => {
-    dispatch(setisLoggedin(loggedin));
-  }, [loggedin]);
-
-  const saveCredential = (info) => {
-    console.log("working", info.accessToken);
-    setLoggedin(true);
-    localStorage.setItem("token", info.accessToken);
+  const saveCredential = (user) => {
+    localStorage.setItem("token", user.accessToken);
+    // console.log(user.accessToken)
+    dispatch(setisLoggedin(true));
   };
+  console.log("is Logged in ?", state.isLoggedin);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -33,9 +29,6 @@ function Login() {
           const user = userCredential.user;
           console.log(user);
           saveCredential(user);
-
-          // localStorage.setItem('token', )
-          // dispatch(setisLoggedin(true));
         })
         .catch((error) => {
           // const errorCode = error.code
@@ -60,7 +53,6 @@ function Login() {
     return;
   };
 
-  console.log("is Logged in ?", state.isLoggedin);
   // state.isLoggedin ?  : "";
   if (state.isLoggedin) {
     return <Navigate to="/" />;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { useSelector } from "react-redux";
 import {
   About,
@@ -12,7 +12,7 @@ import {
   SignUp,
 } from "./component/index";
 import { setisLoggedin } from "./Reducer";
-
+// amit1@gmail.com
 export default function App() {
   // const state = useSelector((state) => state.counter);
   const dispatch = useDispatch();

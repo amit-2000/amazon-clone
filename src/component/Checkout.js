@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { removeFromCart } from "../Reducer";
-// import { Link, Navigate } from "react-router-dom";
+// import { Link, Navigate } from "react-router-dom";5
 import { useNavigate } from "react-router-dom";
 import "./checkout.css";
 // import "./Products.css";

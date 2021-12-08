@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import Products from "./Products";
-import Temp from "./Temp";
+import Footer from "./Footer";
 const Header = () => {
   return (
     <div className="home">
@@ -78,7 +78,7 @@ If spelling is correct, try running Windows Network Diagnostics.
           image="https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg"
         />
       </div>
-      <Temp />
+      <Footer />
     </div>
   );
 };
