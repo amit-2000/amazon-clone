@@ -57,58 +57,53 @@ function Login() {
   if (state.isLoggedin) {
     return <Navigate to="/" />;
   } else {
-    return (
-      <div className="login">
-        <Link to="/">
-          <img className="login__logo" src="/img" alt="logo" />
-        </Link>
-        <div className="login__container">
-          <h1 className="login__title">Sign in</h1>
-          <form>
-            <h3>Email</h3>
-            <input
-              className="login__input"
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <h3>Password</h3>
-            <input
-              className="login__input"
-              type={show ? "text" : "password"}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <p
-              onMouseDown={handleShowPassword}
-              onMouseUp={handleShowPassword}
-              onMouseOut={handleShowPasswordHideOnMouseOut}
-              className="login__showPassword"
-            >
-              <RemoveRedEyeIcon className="login__showPassword__eye" />
-              show password
-            </p>
-            <button
-              className="login__button"
-              type="submit"
-              onClick={handleLogin}
-            >
-              Sign in
-            </button>
-          </form>
-          <p className="login__para">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-            reprehenderit, possimus quam eligendi voluptatum quae! Ut,
-            accusantium corporis perspiciatis, nostrum in iure amet error
-            laborum nisi
+  return (
+    <div className="login">
+      <Link to="/">
+        <img className="login__logo" src="/img" alt="logo" />
+      </Link>
+      <div className="login__container">
+        <h1 className="login__title">Sign in</h1>
+        <form>
+          <h3>Email</h3>
+          <input
+            className="login__input"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <h3>Password</h3>
+          <input
+            className="login__input"
+            type={show ? "text" : "password"}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <p
+            onMouseDown={handleShowPassword}
+            onMouseUp={handleShowPassword}
+            onMouseOut={handleShowPasswordHideOnMouseOut}
+            className="login__showPassword"
+          >
+            <RemoveRedEyeIcon className="login__showPassword__eye" />
+            show password
           </p>
-          <Link to="/signup" className="login__button_link">
-            <button className="login__button ">
-              Not have an accout ? create account
-            </button>
-          </Link>
-        </div>
+          <button className="login__button" type="submit" onClick={handleLogin}>
+            Sign in
+          </button>
+        </form>
+        <p className="login__para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+          reprehenderit, possimus quam eligendi voluptatum quae! Ut, accusantium
+          corporis perspiciatis, nostrum in iure amet error laborum nisi
+        </p>
+        <Link to="/signup" className="login__button_link">
+          <button className="login__button ">
+            Not have an accout ? create account
+          </button>
+        </Link>
       </div>
-    );
-  }
+    </div>
+  );
+}
 }
 
 export default Login;

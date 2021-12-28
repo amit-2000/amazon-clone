@@ -15,16 +15,17 @@ const Temp = () => {
   // const [deletepPost] = useDeleteProdMutation();
   // console.log("DeletePost function", deletepPost);
   // console.log("response from deltepost", res);
-  const getIdToken=()=>{
-    console.log(localStorage.getItem('token'))
-  }
+  const getIdToken = () => {
+    console.log(localStorage.getItem("token"));
+  };
 
   return (
     <div>
       <h1>Filter products</h1>
       {/* <button onClick={handleBtn}> Filter Products</button> */}
       {/* <button onClick={() => deletepPost(3)}> Delete prod</button> */}
-      <button onClick={getIdToken}> Delete prod</button>
+
+      <button onClick={getIdToken}>Delete prod</button>
     </div>
   );
 };
